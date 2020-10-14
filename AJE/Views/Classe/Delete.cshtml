@@ -1,0 +1,31 @@
+﻿@model Classe
+
+<form asp-controller="Classe" asp-action="Delete" asp-route-id="@Model.ClasseID" method="post">
+    <table border="0">
+        <tr>
+            <td class="right">
+                <label asp-for="Niveau"></label>
+            </td>
+            <td>@Model.Niveau</td>
+        </tr>
+        <tr>
+            <td class="right">
+                <label asp-for="@Model.Section"></label>
+            </td>
+            <td>@Model.Section</td>
+        </tr>
+        <tr>
+            <td class="right">
+                <label asp-for="Option"></label>
+            </td>
+            <td>@Model.Option</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="submit">Supprimer</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+<a asp-controller="Ecole" asp-action="Detail" asp-route-id="@ViewBag.EcoleID">Retour à  l'école </a>

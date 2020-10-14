@@ -1,0 +1,58 @@
+﻿@model Prefet
+
+<h2>Supprimer le prefet</h2>
+
+<form asp-controller="Prefet" asp-action="Delete" method="post">
+    <table>
+        <tr>
+            <td>
+                <label asp-for="PrefetID"></label>
+            </td>
+            <td>@Model.PrefetID</td>
+        </tr>
+
+        <tr>
+            <td>
+                <label asp-for="@Model.Nom"></label>
+            </td>
+            <td>@Model.Nom</td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="@Model.Postnom"></label>
+            </td>
+            <td>@Model.Postnom</td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="@Model.Prenom"></label>
+            </td>
+            <td>@Model.Prenom</td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="@Model.Nom"></label>
+            </td>
+            <td>@Model.Genre</tr>
+
+        <tr>
+            <td>
+                <label asp-for="@Model.Matricule"></label>
+            </td>
+            <td>@Model.Matricule</td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="@Model.DateNaissance"></label>
+            </td>
+            <td>@Model.DateNaissance</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Supprimer" />
+            </td>
+        </tr>
+    </table>
+</form>
+
+<a asp-controller="Prefet" asp-action="Index">Retour à la liste</a>

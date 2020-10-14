@@ -1,0 +1,73 @@
+﻿@model Ecole
+
+<h2>Ajouter une nouvelle école</h2>
+
+<form asp-controller="Ecole" asp-action="Create" method="post">
+    <table border="0">
+
+        <tr>
+            <td>
+                <label asp-for="EcoleID"></label>
+            </td>
+            <td>
+                <input type="hidden" asp-for="EcoleID" />
+                <span>ViewBag.EcoleID</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="right">
+                <label asp-for="Nom"></label>
+            </td>
+            <td>
+                <input type="text" asp-for="Nom" />
+                <span asp-validation-for="Nom" class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td class="right">
+                <label asp-for="PrefetID"></label>
+            </td>
+            <td>
+                <select asp-for="PrefetID" asp-items="ViewBag.PrefetID"></select>
+                <span asp-validation-for="PrefetID" class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td class="right">
+                <label asp-for="SousDivision"></label>
+            </td>
+            <td>
+                <select asp-for="SousDivision" asp-items="ViewBag.SousDivisions"></select>
+                <span asp-validation-for="SousDivision" class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td class="right">
+                <label asp-for="DateCreation"></label>
+            </td>
+            <td>
+                <input type="date" asp-for="DateCreation" />
+                <span asp-validation-for="DateCreation" class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td class="right">
+                <label asp-for="Adresse"></label>
+            </td>
+            <td>
+                <input type="text" asp-for="Adresse" />
+                <span asp-validation-for="Adresse" class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="submit">Creer</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+<br />
+<br />
+
+<a asp-action="Index">Rentrer à la liste des écoles</a>

@@ -1,0 +1,79 @@
+﻿@model Prefet
+
+<h2>Modifier prefet</h2>
+
+<form asp-controller="Prefet" asp-action="Update" method="post">
+    <table>
+        <tr>
+            <td>
+                <label asp-for="PrefetID"></label>
+            </td>
+            <td>
+                <input type="hidden" asp-for="PrefetID" />
+                <span>@Model.PrefetID</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="@Model.Nom"></label>
+            </td>
+            <td>
+                <input type="text" asp-for="@Model.Nom" />
+                <span asp-validation-for="@Model.Nom" class="text-danger"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="@Model.Postnom"></label>
+            </td>
+            <td>
+                <input type="text" asp-for="@Model.Postnom" />
+                <span asp-validation-for="@Model.Postnom" class="text-danger"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="@Model.Prenom"></label>
+            </td>
+            <td>
+                <input type="text" asp-for="@Model.Prenom" />
+                <span asp-validation-for="@Model.Prenom" class="text-danger"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="@Model.Nom"></label>
+            </td>
+            <td>
+                <select asp-for="@Model.Genre" asp-items="@Html.GetEnumSelectList<Genre>()"></select>
+                <span asp-validation-for="@Model.Nom" class="text-danger"></span>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label asp-for="@Model.Matricule"></label>
+            </td>
+            <td>
+                <input type="text" asp-for="@Model.Matricule" />
+                <span asp-validation-for="@Model.Matricule" class="text-danger"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="@Model.DateNaissance"></label>
+            </td>
+            <td>
+                <input type="date" asp-for="@Model.DateNaissance" />
+                <span asp-validation-for="@Model.DateNaissance" class="text-danger"></span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Modifier" />
+            </td>
+        </tr>
+    </table>
+</form>
+
+<a asp-controller="Prefet" asp-action="Index">Retour à la liste des prefets</a>

@@ -1,0 +1,53 @@
+﻿@model Prefet
+
+<table>
+    <tr>
+        <td>
+            <label asp-for="PrefetID"></label>
+        </td>
+        <td>@Model.PrefetID</td>
+    </tr>
+
+    <tr>
+        <td>
+            <label asp-for="@Model.Nom"></label>
+        </td>
+        <td>@Model.Nom</td>
+    </tr>
+    <tr>
+        <td>
+            <label asp-for="@Model.Postnom"></label>
+        </td>
+        <td>@Model.Postnom</td>
+    </tr>
+    <tr>
+        <td>
+            <label asp-for="@Model.Prenom"></label>
+        </td>
+        <td>@Model.Prenom</td>
+    </tr>
+    <tr>
+        <td>
+            <label asp-for="@Model.Nom"></label>
+        </td>
+        <td>@Model.Genre
+    </tr>
+
+    <tr>
+        <td>
+            <label asp-for="@Model.Matricule"></label>
+        </td>
+        <td>@Model.Matricule</td>
+    </tr>
+    <tr>
+        <td>
+            <label asp-for="@Model.DateNaissance"></label>
+        </td>
+        <td>@Model.DateNaissance</td>
+    </tr>
+</table>
+<a asp-controller="Prefet" asp-action="Update" asp-route-id="@Model.PrefetID">Modifier</a>
+<br />
+<a asp-controller="Prefet" asp-action="Delete" asp-route-id="@Model.PrefetID">Supprimer</a>
+<br />
+<a asp-action="Index" >Retour à la liste des prefets</a>

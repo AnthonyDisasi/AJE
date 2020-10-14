@@ -1,0 +1,46 @@
+﻿@model Cours
+
+
+<h2>Ajouter une nouveau cours</h2>
+
+<form asp-controller="Cours" asp-action="Create" asp-route-id_classe="@ViewBag.ClasseID" method="post">
+    <table border="0">
+        <tr>
+            <td class="right">
+                <label asp-for="Intituler"></label>
+            </td>
+            <td>
+                <input type="text" asp-for="Intituler" />
+                <span asp-validation-for="Intituler" class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td class="right">
+                <label asp-for="Categorie"></label>
+            </td>
+            <td>
+                <select asp-for="Categorie" asp-items="ViewBag.Categories"></select>
+                <span asp-validation-for="Categorie" class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td class="right">
+                <label asp-for="Volume"></label>
+            </td>
+            <td>
+                <input type="number" asp-for="Volume" />
+                <span asp-validation-for="Volume" class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="submit">Creer</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+<br />
+<br />
+
+<a asp-action="Detail" asp-controller="Classe" asp-route-id="@ViewBag.ClasseID">Rentrer à la classe</a>

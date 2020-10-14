@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Ecole>
+
+<h2>Liste des Prefets</h2>
+
+<a asp-action="Create">Nouvelle Ecole</a>
+<br />
+<br />
+
+<table>
+    <tr>
+        <th>Nom</th>
+        <th>Sous - Division</th>
+        <th>Date de Création</th>
+        <th>Adresse</th>
+        <th>Prefet</th>
+        <th colspan="3">Action</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Nom</td>
+            <td>@item.SousDivision</td>
+            <td>@item.DateCreation</td>
+            <td>@item.Adresse</td>
+            <td>@item.Prefet.Nom - @item.Prefet.Prenom</td>
+            <td>
+                <a asp-action="Update" asp-route-id="@item.EcoleID" class="linkButton">Modifier</a>
+            </td>
+            <td>
+                <a asp-action="Detail" asp-route-id="@item.EcoleID" class="linkButton">Detail</a>
+            </td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@item.EcoleID" class="linkButton">Supprimer</a>
+            </td>
+        </tr>
+    }
+</table>

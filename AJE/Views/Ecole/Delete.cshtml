@@ -1,0 +1,54 @@
+﻿@model Ecole
+
+<h2>Modifier Ecole</h2>
+
+<form asp-controller="Ecole" asp-action="Delete" method="post">
+    <table border="0">
+        <tr>
+            <td>
+                <label asp-for="EcoleID"></label>
+            </td>
+            <td>@Model.EcoleID</td>
+        </tr>
+        <tr>
+            <td class="right">
+                <label asp-for="Nom"></label>
+            </td>
+            <td>Nom</td>
+        </tr>
+        <tr>
+            <td class="right">
+                <label asp-for="PrefetID"></label>
+            </td>
+            <td>PrefetID</td>
+        </tr>
+        <tr>
+            <td class="right">
+                <label asp-for="SousDivision"></label>
+            </td>
+            <td>SousDivision</td>
+        </tr>
+        <tr>
+            <td class="right">
+                <label asp-for="DateCreation"></label>
+            </td>
+            <td>DateCreation</td>
+        </tr>
+        <tr>
+            <td class="right">
+                <label asp-for="Adresse"></label>
+            </td>
+            <td>Adresse</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="submit">Supprimer</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+<br />
+<br />
+
+<a asp-controller="Ecole" asp-action="Index">Back to Employee Listing</a>

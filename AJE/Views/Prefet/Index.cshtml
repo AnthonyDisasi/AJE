@@ -1,0 +1,39 @@
+﻿@model List<Prefet>
+
+<h1>Prefets</h1>
+
+<a asp-action="Create">Ajouter un nouveau prefet</a>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Postnom</th>
+        <th>Prenom</th>
+        <th>Genre</th>
+        <th>Matricule</th>
+        <th>Date de naissance</th>
+        <th colspan="3">Actions</th>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.PrefetID</td>
+            <td>@item.Nom</td>
+            <td>@item.Postnom</td>
+            <td>@item.Prenom</td>
+            <td>@item.Genre</td>
+            <td>@item.Matricule</td>
+            <td>@item.DateNaissance</td>
+            <td>
+                <a asp-action="Detail" asp-route-id="@item.PrefetID">Detail</a>
+            </td>
+            <td>
+                <a asp-action="Update" asp-route-id="@item.PrefetID">Modifier</a>
+            </td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@item.PrefetID">Supprimer</a>
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,44 @@
+﻿@model Classe
+
+<form asp-controller="Classe" asp-action="Create" asp-route-id="@ViewBag.EcoleID" method="post">
+    <table border="0">
+        <tr>
+            <td class="right">
+                <label asp-for="Niveau"></label>
+            </td>
+            <td>
+                <input type="text" asp-for="Niveau" />
+                <span asp-validation-for="Niveau" class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td class="right">
+                <label asp-for="Section"></label>
+            </td>
+            <td>
+                <select asp-for="Section" asp-items="@ViewBag.Sections">
+                    <option value="">Selectionner une section</option>
+                </select>
+                <span asp-validation-for="Section" class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td class="right">
+                <label asp-for="Option"></label>
+            </td>
+            <td>
+                <select asp-for="Option" asp-items="@ViewBag.Options">
+                    <option value="">Selectionner une option</option>
+                </select>
+                <span asp-validation-for="Option" class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="submit">Creer</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+<a asp-controller="Ecole" asp-action="Detail" asp-route-id="@ViewBag.EcoleID">Retour à  l'école </a>

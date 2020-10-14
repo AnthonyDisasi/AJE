@@ -1,6 +1,6 @@
 ﻿@model Classe
 
-<form asp-controller="Classe" asp-action="Update" asp-route-id="@ViewBag.EcoleID" asp-route-classeId="@Model.ClasseID" method="post">
+<form asp-area="Prefet" asp-controller="Classe" asp-action="Update" asp-route-id="@ViewBag.EcoleID" asp-route-classeId="@Model.ClasseID" method="post">
     <table border="0">
         <tr>
             <td class="right">
@@ -41,4 +41,4 @@
     </table>
 </form>
 
-<a asp-controller="Ecole" asp-action="Detail" asp-route-id="@ViewBag.EcoleID">Retour à  l'école </a>
+<a asp-area="Prefet" asp-controller="Classe" asp-action="Index" asp-route-id="@ViewBag.PrefetID">Retour à  la liste des classes </a>

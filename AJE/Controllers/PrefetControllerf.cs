@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace AJE.Controllers
 {
-    public class PrefetController : Controller
+    public class PrefetControllerf : Controller
     {
         private readonly AppDbContextEcole db;
-        public PrefetController(AppDbContextEcole _db)
+        public PrefetControllerf(AppDbContextEcole _db)
         {
             db = _db;
         }

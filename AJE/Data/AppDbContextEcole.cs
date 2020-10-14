@@ -1,5 +1,4 @@
-﻿using AJE.Areas.Prefet.Models;
-using AJE.Models;
+﻿using AJE.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace AJE.Data

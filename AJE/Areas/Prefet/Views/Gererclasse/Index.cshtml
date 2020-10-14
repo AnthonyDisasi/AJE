@@ -1,0 +1,93 @@
+﻿@model AJE.Models.Ecole
+
+
+<table border="1">
+    <tr>
+        <td>
+            <label asp-for="EcoleID"></label>
+        </td>
+        <td>@Model.EcoleID</td>
+    </tr>
+
+    <tr>
+        <td>
+            <label asp-for="@Model.Nom"></label>
+        </td>
+        <td>@Model.Nom</td>
+    </tr>
+    <tr>
+        <td>
+            <label asp-for="@Model.SousDivision"></label>
+        </td>
+        <td>@Model.SousDivision</td>
+    </tr>
+    <tr>
+        <td>
+            <label asp-for="@Model.DateCreation"></label>
+        </td>
+        <td>@Model.DateCreation</td>
+    </tr>
+    <tr>
+        <td>
+            <label asp-for="@Model.Adresse"></label>
+        </td>
+        <td>@Model.Adresse
+    </tr>
+    <tr>
+        <td>
+            <label asp-for="@Model.Prefet"></label>
+        </td>
+        <td>
+            <table border="1">
+                <tr>
+                    <td>Nom</td>
+                    <td>@Model.Prefet.Nom</td>
+                </tr>
+                <tr>
+                    <td>Postnom</td>
+                    <td>@Model.Prefet.Postnom</td>
+                </tr>
+                <tr>
+                    <td>Prenom</td>
+                    <td>@Model.Prefet.Prenom</td>
+                </tr>
+                <tr>
+                    <td>Matricule</td>
+                    <td>@Model.Prefet.Matricule</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td>Classes</td>
+        <td>
+            <a asp-controller="Classe" asp-action="Create" asp-route-id="@Model.EcoleID">Ajouter</a>
+            <br />
+            <table border="1">
+                <tr>
+                    <th>Niveau</th>
+                    <th>Section</th>
+                    <th>Option</th>
+                    <th colspan="3">Actions</th>
+                </tr>
+                @foreach (var item in Model.Classes)
+                {
+                    <tr>
+                        <td>@item.Niveau</td>
+                        <td>@item.Section</td>
+                        <td>@item.Option</td>
+                        <td>
+                            <a asp-controller="Classe" asp-action="Update" asp-route-id="@item.ClasseID">Modifier</a>
+                        </td>
+                        <td>
+                            <a asp-controller="Classe" asp-action="Delete" asp-route-id="@item.ClasseID">Supprimer</a>
+                        </td>
+                        <td>
+                            <a asp-controller="Classe" asp-action="Detail" asp-route-id="@item.ClasseID">Detail</a>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </td>
+    </tr>
+</table>

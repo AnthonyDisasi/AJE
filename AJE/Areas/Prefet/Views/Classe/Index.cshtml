@@ -1,4 +1,5 @@
 ﻿@model Ecole
+
 <table border="1">
     <tr>
         <td>
@@ -82,7 +83,7 @@
                             <a asp-area="Prefet" asp-controller="Classe" asp-action="Update" asp-route-id="@item.ClasseID">Modifier</a>
                         </td>
                         <td>
-                            <a asp-area="Prefet" asp-controller="Classe" asp-action="Delete" asp-route-id="@item.ClasseID">Supprimer</a>
+                            <a asp-area="Prefet" asp-controller="Classe" asp-action="Delete" asp-route-idPrefet="@Model.PrefetID" asp-route-id="@item.ClasseID">Supprimer</a>
                         </td>
                         <td>
                             <a asp-area="Prefet" asp-controller="Classe" asp-action="Detail" asp-route-id="@item.ClasseID">Detail</a>

@@ -18,7 +18,6 @@ namespace AJE.Models
         public int EpreuveID { get; set; }
         public int CoursID { get; set; }
         public int EleveID { get; set; }
-        public int BulletinID { get; set; }
 
         [Display(Name = "Description")]
         [StringLength(50, ErrorMessage = "La description doit être plus petit que 50 charactères")]
@@ -39,10 +38,9 @@ namespace AJE.Models
 
         [Display(Name = "Point")]
         [Required(ErrorMessage = "Le point est obligatoire")]
-        public double point { get; set; }
+        public double Point { get; set; }
 
         public Cours Cours { get; set; }
         public Eleve Eleve { get; set; }
-        public Bulletin Bulletin { get; set; }
     }
 }

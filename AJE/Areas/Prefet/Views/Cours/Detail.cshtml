@@ -1,0 +1,31 @@
+﻿@model Cours
+
+
+<h3>@Model.Classe.Niveau - @Model.Classe.Section - @Model.Classe.Option</h3>
+<br />
+
+<h4>Cours de @Model.CoursID @Model.Categorie @Model.Volume </h4>
+
+<h5>Lecons de la classe</h5>
+
+<p>Nombre des leçons : @Model.Lecons.Count()</p>
+
+@foreach (Lecon item in Model.Lecons)
+{
+    <p>
+        @item.Description - @item.DateLecon - @item.Duree
+        <a asp-area="Prefet" asp-controller="Lecon" asp-action="Detail" asp-route-id="@item.LeconID">Detail</a>
+    </p>
+}
+
+<h5>Epreuves faites dans le cours</h5>
+
+<p>Nombre d'épreuves : @Model.Epreuves.Count()</p>
+
+@foreach (Epreuve item in Model.Epreuves)
+{
+    <p>@item.Description - @item.DateEpreuve - @item.Periode - @item.Total - @item.Point - @insc.Eleve.Genre - @insc.Eleve.DateNaissance</p>
+    <a asp-area="Prefet" asp-controller="Eleve" asp-action="Update" asp-route-id="@insc.Eleve.EleveID">Modifier</a>
+    <a asp-controller="Eleve" asp-action="Delete" asp-route-id="@insc.Eleve.EleveID">Retirer</a>
+    <br />
+}

@@ -18,7 +18,8 @@
     <p>
         @cours.Intituler - @cours.Categorie - @cours.Volume
         <a asp-area="Prefet" asp-controller="Cours" asp-action="Update" asp-route-id="@cours.CoursID">Modifier</a>
-        <a asp-area="Prefet" asp-controller="Cours" asp-action="Delete" asp-route-id="@cours.CoursID">Retirer</a>
+        <a asp-area="Prefet" asp-controller="Cours" asp-action="Delete" asp-route-idcours="@cours.CoursID" asp-route-id="@Model.ClasseID">Retirer</a>
+        <a asp-area="Prefet" asp-controller="Cours" asp-action="Detail" asp-route-id="@cours.CoursID">Detail</a>
     </p>
 }
 
@@ -32,6 +33,6 @@
 {
     <p>@insc.Eleve.Nom - @insc.Eleve.Postnom - @insc.Eleve.Prenom - @insc.Eleve.Matricule - @insc.Eleve.Genre - @insc.Eleve.DateNaissance</p>
     <a asp-area="Prefet" asp-controller="Eleve" asp-action="Update" asp-route-id="@insc.Eleve.EleveID">Modifier</a>
-    <a asp-area="Prefet" asp-controller="Eleve" asp-action="Delete" asp-route-id="@insc.Eleve.EleveID">Retirer</a>
+    <a  asp-controller="Eleve" asp-action="Delete" asp-route-id="@insc.Eleve.EleveID">Retirer</a>
     <br />
 }

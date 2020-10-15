@@ -1,0 +1,32 @@
+﻿@model Cours
+<h2>Supprimer le cours</h2>
+
+<form asp-area="Prefet" asp-controller="Cours" asp-action="Delete" asp-route-id="@Model.ClasseID" asp-route-idcours="@Model.CoursID" method="post">
+    <table border="0">
+        <tr>
+            <td class="right">
+                <label asp-for="Intituler"></label>
+            </td>
+            <td>@Model.Intituler</td>
+        </tr>
+        <tr>
+            <td class="right">
+                <label asp-for="Categorie"></label>
+            </td>
+            <td>@Model.Categorie</td>
+        </tr>
+        <tr>
+            <td class="right">
+                <label asp-for="Volume"></label>
+            </td>
+            <td>@Model.Volume </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="submit">Supprimer</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+<a asp-area="Prefet" asp-controller="Classe" asp-action="Detail" asp-route-id="@ViewBag.ClasseID">Reatour à la classe</a>

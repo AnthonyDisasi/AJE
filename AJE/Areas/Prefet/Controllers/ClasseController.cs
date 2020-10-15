@@ -68,9 +68,10 @@ namespace AJE.Areas.Prefet.Controllers
             if (ModelState.IsValid)
             {
                 model.EcoleID = id;
+                int idPrefet = db.Ecoles.FirstOrDefault(p => p.EcoleID == id).PrefetID;
                 db.Classes.Add(model);
                 db.SaveChanges();
-                return RedirectToAction("Index", "Classe", new { id = id });
+                return RedirectToAction("Index", "Classe", new { id = idPrefet });
             }
             FillSection();
             FillOption();
@@ -98,26 +99,28 @@ namespace AJE.Areas.Prefet.Controllers
                 model.EcoleID = id;
                 db.Classes.Update(model);
                 db.SaveChanges();
-                return RedirectToAction("Index", "Classe", new { id = id });
+                int idPrefet = db.Ecoles.FirstOrDefault(p => p.EcoleID == id).PrefetID;
+                return RedirectToAction("Index", "Classe", new { id = idPrefet });
             }
             ViewData["EcoleID"] = id;
             return View(model);
         }
 
         [ActionName("Delete")]
-        public IActionResult Supprimer(int id)
+        public IActionResult Supprimer(int id, int idPrefet)
         {
+            ViewData["idPrefet"] = idPrefet;
             Classe model = db.Classes.Find(id);
             return View(model);
         }
 
         [HttpPost]
-        public IActionResult Delete(int id)
+        public IActionResult Delete(int id, int idPrefet)
         {
             Classe model = db.Classes.Find(id);
             db.Remove(model);
             db.SaveChanges();
-            return RedirectToAction("Index", "Classe", new { id = model.EcoleID });
+            return RedirectToAction("Index", "Classe", new { id = idPrefet });
         }
 
     }

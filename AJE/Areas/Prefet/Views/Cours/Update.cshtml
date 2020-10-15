@@ -1,0 +1,43 @@
+﻿@model Cours
+<h2>Modifier le cours</h2>
+
+<form asp-area="Prefet" asp-controller="Cours" asp-action="Update" asp-route-id="@Model.ClasseID" asp-route-idcours="@Model.CoursID" method="post">
+    <table border="0">
+        <tr>
+            <td class="right">
+                <label asp-for="Intituler"></label>
+            </td>
+            <td>
+                <input type="text" asp-for="Intituler" />
+                <span asp-validation-for="Intituler" class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td class="right">
+                <label asp-for="Categorie"></label>
+            </td>
+            <td>
+                <select asp-for="Categorie" asp-items="@ViewBag.Categories">
+                    <option value="">Selectionner une section</option>
+                </select>
+                <span asp-validation-for="Categorie" class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td class="right">
+                <label asp-for="Volume"></label>
+            </td>
+            <td>
+                <input type="text" asp-for="Volume" />
+                <span asp-validation-for="Volume" class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="submit">Modifier</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+<a asp-area="Prefet" asp-controller="Classe" asp-action="Index" asp-route-id="@ViewBag.PrefetID">Retour à  la liste des classes </a>

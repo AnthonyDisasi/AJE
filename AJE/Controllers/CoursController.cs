@@ -11,7 +11,7 @@ namespace AJE.Controllers
 {
     public class CoursController : Controller
     {
-        public AppDbContextEcole db = null;
+        public AppDbContextEcole db;
         public CoursController(AppDbContextEcole _db)
         {
             db = _db;

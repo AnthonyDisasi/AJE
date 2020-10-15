@@ -70,7 +70,7 @@ namespace AJE.Areas.Prefet.Controllers
                 model.EcoleID = id;
                 db.Classes.Add(model);
                 db.SaveChanges();
-                return RedirectToAction("Detail", "Ecole", new { id = id });
+                return RedirectToAction("Index", "Classe", new { id = id });
             }
             FillSection();
             FillOption();
@@ -98,7 +98,7 @@ namespace AJE.Areas.Prefet.Controllers
                 model.EcoleID = id;
                 db.Classes.Update(model);
                 db.SaveChanges();
-                return RedirectToAction("Detail", "Ecole", new { id = id });
+                return RedirectToAction("Index", "Classe", new { id = id });
             }
             ViewData["EcoleID"] = id;
             return View(model);
@@ -117,7 +117,7 @@ namespace AJE.Areas.Prefet.Controllers
             Classe model = db.Classes.Find(id);
             db.Remove(model);
             db.SaveChanges();
-            return RedirectToAction("Detail", "Ecole", new { id = model.EcoleID });
+            return RedirectToAction("Index", "Classe", new { id = model.EcoleID });
         }
 
     }

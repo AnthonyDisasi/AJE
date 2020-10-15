@@ -4,14 +4,16 @@ using AJE.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AJE.Migrations
 {
     [DbContext(typeof(AppDbContextEcole))]
-    partial class AppDbContextEcoleModelSnapshot : ModelSnapshot
+    [Migration("20201015133744__init_6")]
+    partial class _init_6
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

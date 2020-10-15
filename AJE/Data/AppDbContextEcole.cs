@@ -9,7 +9,6 @@ namespace AJE.Data
         {
         }
         public DbSet<Classe> Classes { get; set; }
-        public DbSet<Bulletin> Bulletins { get; set; }
         public DbSet<Cours> Cours { get; set; }
         public DbSet<Categorie> Categories { get; set; }
         public DbSet<Ecole> Ecoles { get; set; }

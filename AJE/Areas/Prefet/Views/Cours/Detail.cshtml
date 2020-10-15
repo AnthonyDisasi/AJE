@@ -14,7 +14,7 @@
 {
     <p>
         @item.Description - @item.DateLecon - @item.Duree
-        <a asp-area="Prefet" asp-controller="Lecon" asp-action="Detail" asp-route-id="@item.LeconID">Detail</a>
+        <a asp-area="Professeur" asp-controller="Lecon" asp-action="Detail" asp-route-id="@item.LeconID">Detail</a>
     </p>
 }
 
@@ -24,8 +24,7 @@
 
 @foreach (Epreuve item in Model.Epreuves)
 {
-    <p>@item.Description - @item.DateEpreuve - @item.Periode - @item.Total - @item.Point - @insc.Eleve.Genre - @insc.Eleve.DateNaissance</p>
-    <a asp-area="Prefet" asp-controller="Eleve" asp-action="Update" asp-route-id="@insc.Eleve.EleveID">Modifier</a>
-    <a asp-controller="Eleve" asp-action="Delete" asp-route-id="@insc.Eleve.EleveID">Retirer</a>
+    <p>@item.Description - @item.DateEpreuve - @item.Periode - @item.Total - @item.Point</p>
+    <a asp-area="Professeur" asp-controller="Epreuve" asp-action="Detail" asp-route-id="@item.EpreuveID">Detail</a>
     <br />
 }

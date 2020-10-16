@@ -1,0 +1,22 @@
+﻿@model Eleve
+
+<p>@Model.Nomcomplet - @Model.Matricule - @Model.Genre - @Model.DateNaissance</p>
+
+<p>Nombre d'inscription effectué @Model.Inscriptions.Count()</p>
+
+@foreach(Inscription item in Model.Inscriptions)
+{
+    <p>Année d'inscription : @item.AnneeScolaire</p>
+    <p>Classe : @item.Classe.Nomcomplet</p>
+}
+
+<p>Nombre d'épreuve effectué : @Model.Epreuves.Count()</p>
+
+@foreach(Epreuve item in Model.Epreuves)
+{
+    <p>Epreuve : @item.Description</p>
+    <p>Date de l'épreuve : @item.DateEpreuve</p>
+    <p>Periode : @item.Periode</p>
+    <p>Point : @item.Point</p>
+    <p>Total : @item.Total</p>
+}

@@ -42,6 +42,15 @@ namespace AJE.Models
         [StringLength(20, ErrorMessage = "Le matricule doit être plus petit que 20 charactères")]
         public string Matricule { get; set; }
 
+        [Display(Name ="Nom complet")]
+        public string Nomcomplet
+        {
+            get
+            {
+                return Nom + " " + Postnom + " " + Prenom;
+            }
+        }
+
         public ICollection<Inscription> Inscriptions { get; set; }
         public ICollection<Epreuve> Epreuves { get; set; }
     }

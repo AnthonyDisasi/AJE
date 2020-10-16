@@ -61,16 +61,16 @@ namespace AJE.Areas.Prefet.Controllers
             return View(model);
         }
 
-        public IActionResult Index(int idecole)
+        public IActionResult Detail(int id)
         {
-            Ecole model = db.Ecoles.Include(c => c.Classes).AsNoTracking().FirstOrDefault(e => e.EcoleID == idecole);
-            ViewData["cl"] = new SelectList(model.Classes, "ClasseID", "Nomcomplet");
+            var model = db.Eleves
+                .Include(i => i.Inscriptions)
+                .ThenInclude(c => c.Classe)
+                .Include(ep => ep.Epreuves)
+                .ThenInclude(co => co.Cours)
+                .AsNoTracking()
+                .FirstOrDefault(e => e.EleveID == id);
             return View(model);
-        }
-
-        public string In(int moi)
-        {
-            return moi.ToString();
         }
     }
 }

@@ -32,8 +32,8 @@
 @foreach (Inscription insc in Model.Inscriptions)
 {
     <p>@insc.Eleve.Nomcomplet - @insc.Eleve.Matricule - @insc.Eleve.Genre - @insc.Eleve.DateNaissance</p>
-    <a asp-area="Prefet" asp-controller="Eleves" asp-action="Update" asp-route-id="@insc.Eleve.EleveID">Modifier</a>
+    <a asp-area="Prefet" asp-controller="Eleves" asp-action="Update" asp-route-idclasse="@insc.ClasseID" asp-route-ideleve="@insc.Eleve.EleveID">Modifier</a>
     <a asp-area="Prefet" asp-controller="Eleves" asp-action="Delete" asp-route-id="@insc.Eleve.EleveID">Retirer</a>
-    <a asp-area="Prefet" asp-controller="Eleves" asp-action="Detail" asp-route-id="@insc.Eleve.EleveID">Detail</a>
+    <a asp-area="Prefet" asp-controller="Eleves" asp-action="Detail" asp-route-idclasse="@Model.ClasseID" asp-route-id="@insc.Eleve.EleveID">Detail</a>
     <br />
 }

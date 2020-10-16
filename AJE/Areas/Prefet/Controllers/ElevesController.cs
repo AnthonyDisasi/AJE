@@ -61,15 +61,15 @@ namespace AJE.Areas.Prefet.Controllers
             return View(model);
         }
 
-        public IActionResult Detail(int id)
+        public IActionResult Detail(int id, int idclasse)
         {
-            var model = db.Eleves
-                .Include(i => i.Inscriptions)
-                .ThenInclude(c => c.Classe)
-                .Include(ep => ep.Epreuves)
-                .ThenInclude(co => co.Cours)
-                .AsNoTracking()
-                .FirstOrDefault(e => e.EleveID == id);
+            //Eleve eleve = ecole.Classes
+            var model = from c in db.Classes
+                        join i in db.Inscriptions on c.ClasseID equals i.ClasseID
+                        join el in db.Eleves on i.EleveID equals el.EleveID
+                        where c.ClasseID == idclasse &&
+                                el.EleveID == id
+                        select el;
             return View(model);
         }
     }

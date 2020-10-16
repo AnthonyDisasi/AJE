@@ -13,7 +13,6 @@
 
 
   <ItemGroup>
-    <Folder Include="Areas\Prefet\Views\Eleves\" />
     <Folder Include="Areas\Professeur\" />
     <Folder Include="Views\Classe\" />
   </ItemGroup>

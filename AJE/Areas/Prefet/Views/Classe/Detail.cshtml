@@ -5,7 +5,7 @@
 <h3>@Model.Ecole.Nom - @Model.Ecole.SousDivision - @Model.Ecole.DateCreation</h3>
 <br />
 
-<h4>Classe de @Model.Niveau @Model.Option @Model.Option </h4>
+<h4>Classe de @Model.Nomcomplet </h4>
 
 <h5>Cours de la classe</h5>
 
@@ -25,7 +25,7 @@
 
 <h5>Elève inscris à la classe</h5>
 
-<a asp-area="Prefet" asp-controller="Eleve" asp-action="Create">Inscrire un élève</a>
+<a asp-area="Prefet" asp-controller="Eleves" asp-route-idecole="@Model.Ecole.EcoleID" asp-action="Create">Inscrire un élève</a>
 
 <p>Nombre d'inscriptions : @Model.Inscriptions.Count()</p>
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AJE.Areas.Eleve
+namespace AJE.Areas.Eleve_
 {
     [Area("Eleve")]
     public class ExamenController : Controller

@@ -64,9 +64,7 @@
             <br />
             <table border="1">
                 <tr>
-                    <th>Niveau</th>
-                    <th>Section</th>
-                    <th>Option</th>
+                    <th>Nom de la classe</th>
                     <th>Nombre de cours</th>
                     <th>Nombre d'élève</th>
                     <th colspan="3">Actions</th>
@@ -74,9 +72,7 @@
                 @foreach (var item in Model.Classes)
                 {
                     <tr>
-                        <td>@item.Niveau</td>
-                        <td>@item.Section</td>
-                        <td>@item.Option</td>
+                        <td>@item.Nomcomplet</td>
                         <td>@item.Cours.Count()</td>
                         <td>@item.Inscriptions.Count()</td>
                         <td>

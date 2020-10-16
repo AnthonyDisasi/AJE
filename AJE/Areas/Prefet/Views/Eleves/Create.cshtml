@@ -1,0 +1,86 @@
+﻿@model Eleve
+
+
+<h2>Ajouter un nouveau élève</h2>
+
+<form asp-area="Prefet" asp-controller="Eleve" asp-route-idecole="@ViewBag.idecole" asp-action="Create" method="post">
+    <table border="0">
+
+        
+        <tr>
+            <td class="right">
+                <label>Classe</label>
+            </td>
+            <td>
+                <select name="idclasse" asp-items="ViewBag.cl"></select>
+            </td>
+        </tr>
+        <tr>
+            <td class="right">
+                <label asp-for="Nom"></label>
+            </td>
+            <td>
+                <input type="text" asp-for="Nom" />
+                <span asp-validation-for="Nom" class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td class="right">
+                <label asp-for="Postnom"></label>
+            </td>
+            <td>
+                <input type="text" asp-for="Postnom" />
+                <span asp-validation-for="Postnom" class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td class="right">
+                <label asp-for="Prenom"></label>
+            </td>
+            <td>
+                <input type="text" asp-for="Prenom" />
+                <span asp-validation-for="Prenom" class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td class="right">
+                <label asp-for="Matricule"></label>
+            </td>
+            <td>
+                <input type="text" asp-for="Matricule" />
+                <span asp-validation-for="Matricule" class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td class="right">
+                <label asp-for="Genre"></label>
+            </td>
+            <td>
+                <select asp-for="Genre" asp-items="Html.GetEnumSelectList<Genre>()">
+                    <option selected="selected" value="">Please select</option>
+                </select>
+                <span asp-validation-for="Genre" class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td class="right">
+                <label asp-for="DateNaissance"></label>
+            </td>
+            <td>
+                <input type="date" asp-for="DateNaissance" />
+                <span asp-validation-for="DateNaissance" class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="submit">Creer</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+<br />
+<br />
+
+<a asp-area="Prefet" asp-controller="Classe" asp-action="Index" asp-route-id="@ViewBag.PrefetID">Reatour à la classe</a>
+    

@@ -26,6 +26,22 @@ namespace AJE.Models
         [Required(ErrorMessage = "La section est obligatoire")]
         public string Section { get; set; }
 
+        [Display(Name ="Nom de la classe")]
+        public string Nomcomplet 
+        {
+            get
+            {
+                if(Niveau == "1")
+                {
+                    return Niveau + "ère " + Section + " " + Option;
+                }
+                else
+                {
+                    return Niveau + "ème " + Section + " " + Option;
+                }
+            }
+        }
+
         public Ecole Ecole { get; set; }
         public ICollection<Inscription> Inscriptions { get; set; }
         public ICollection<Cours> Cours { get; set; }
